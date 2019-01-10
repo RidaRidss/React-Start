@@ -1,20 +1,9 @@
 // @flow
 import React from "react";
-
-import { TouchableOpacity, Image, View, BackHandler } from "react-native";
 import { connect } from "react-redux";
 import { Navigator } from "react-native-deprecated-custom-components";
-import {
-  Stack,
-  Scene,
-  Router,
-  Actions,
-  ActionConst,
-  Route,
-  Schema,
-  Drawer
-} from "react-native-router-flux";
-import { Keyboard, Animated, Easing } from "react-native";
+import { Stack, Scene, Router, Actions } from "react-native-router-flux";
+import { Animated, Easing } from "react-native";
 import { Colors } from "../theme";
 import { Home } from "../container";
 import styles from "./styles";
@@ -34,38 +23,7 @@ const mapStateToProps = state => {
   return null;
 };
 
-// let MyTransition = (index, position) => {
-//   const inputRange = [index - 1, index, index + 1];
-//   const opacity = position.interpolate({
-//     inputRange,
-//     // outputRange: [0.8, 1, 1]
-//     outputRange: [0, 1, 0.5]
-//   });
-
-//   const scaleY = position.interpolate({
-//     inputRange,
-//     // outputRange: [0.8, 1, 1]
-//     outputRange: [0, 1, 0.5]
-//   });
-
-//   return {
-//     opacity,
-//     transform: [{ scaleY }]
-//   };
-// };
-
 let TransitionConfiguration = () => {
-  // return {
-  //   screenInterpolator: sceneProps => {
-  //     const { position, scene } = sceneProps;
-  //     const { index } = scene;
-
-  //     return MyTransition(index, position);
-  //   }
-  // };
-
-  // new setted transformation for app
-
   return {
     transitionSpec: {
       duration: 750,
