@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 import { Navigator } from "react-native-deprecated-custom-components";
 import { Stack, Scene, Router, Actions } from "react-native-router-flux";
 import { Animated, Easing } from "react-native";
-import { Colors } from "../theme";
+import { Colors, Images } from "../theme";
 import { Home } from "../container";
+import { Text, NavIcon } from "../components";
+
 import styles from "./styles";
 
 // const BACK_SCENES = "home";
@@ -20,8 +22,10 @@ function onBackPress() {
 }
 
 const mapStateToProps = state => {
-  return null;
+  return state;
 };
+
+const ConnectedNavIcon = connect(mapStateToProps)(NavIcon);
 
 let TransitionConfiguration = () => {
   return {
@@ -53,7 +57,21 @@ const navigator = Actions.create(
     key="root"
     tintColor={Colors.primary}
   >
-    <Scene initial hideNavBar key="home" component={Home} />
+    <Scene
+      right={() => (
+        <ConnectedNavIcon
+          rippleEffectFalse="false"
+          style={styles.rightButtonStyle}
+          onPress={() => alert("i am right")}
+          icon={Images.call}
+          // source={Images.call}
+        />
+      )}
+      title="Dashboard"
+      initial
+      key="home"
+      component={Home}
+    />
   </Stack>
 );
 

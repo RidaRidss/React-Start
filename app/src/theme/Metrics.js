@@ -39,6 +39,7 @@ export default {
   },
   image: {
     coverWidth: screenWidth,
-    coverHeight: screenWidth / 2
+    coverHeight: screenWidth / 2,
+    twofour: ratio(24)
   }
 };

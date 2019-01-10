@@ -1,7 +1,7 @@
 // =========== Define Images here =================
 
-// const empty = require("../assets/images/empty.png");
+const call = require("../assets/images/call.png");
 
 export default {
-  //  empty
+  call
 };

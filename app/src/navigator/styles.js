@@ -17,9 +17,13 @@ export default StyleSheet.create({
     backgroundColor: Colors.navbar.background
   },
   title: {
+    justifyContent: "center",
+    alignItems: "center",
+    color: Colors.ash_grey,
     fontWeight: Platform.OS === "ios" ? "200" : "100",
-    width:
-      Metrics.screenWidth - (Metrics.doubleBaseMargin + Metrics.baseMargin),
-    textAlign: "center"
+    width: Metrics.screenWidth - (Metrics.doubleBaseMargin + Metrics.baseMargin)
+  },
+  rightButtonStyle: {
+    marginRight: Metrics.smallMargin
   }
 });
