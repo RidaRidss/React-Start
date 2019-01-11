@@ -47,7 +47,7 @@ export default class App extends Component<{}> {
   };
 
   componentDidMount() {
-    // if (Utils.isPlatformAndroid()) NativeModules.SplashScreen.hide();
+    if (Utils.isPlatformAndroid()) NativeModules.SplashScreen.hide();
     if (Utils.isJSDebugMode()) console.log("Debug Mode Is Enabled");
     BackHandler.addEventListener("hardwareBackPress", () => null);
 
@@ -79,7 +79,6 @@ export default class App extends Component<{}> {
       this.state.store.dispatch,
       networkInfoListener
     );
-
     AppState.addEventListener("change", this._handleAppStateChange);
   };
 

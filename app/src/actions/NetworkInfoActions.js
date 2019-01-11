@@ -1,27 +1,9 @@
-import { NetInfo } from "react-native";
+// @flow
+import * as types from "./ActionTypes";
 
-class NetworkInfo {
-  networkInfoListener(dispatch, networkInfoAction) {
-    NetInfo.isConnected.fetch().then(isNetworkConnected => {
-      dispatch(networkInfoAction(isNetworkConnected));
-    });
-
-    NetInfo.isConnected.addEventListener(
-      "connectionChange",
-      isNetworkConnected => {
-        dispatch(networkInfoAction(isNetworkConnected));
-      }
-    );
-  }
-
-  removeNetworkInfoListener(dispatch, networkInfoAction) {
-    NetInfo.isConnected.removeEventListener(
-      "connectionChange",
-      isNetworkConnected => {
-        dispatch(networkInfoAction(isNetworkConnected));
-      }
-    );
-  }
+export function networkInfoListener(isNetworkConnected: boolean = false) {
+  return {
+    type: types.NETWORK_INFO,
+    isNetworkConnected
+  };
 }
-
-export default new NetworkInfo();

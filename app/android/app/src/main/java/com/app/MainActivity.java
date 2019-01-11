@@ -1,6 +1,8 @@
 package com.app;
 
 import com.facebook.react.ReactActivity;
+import com.splashscreen.SplashScreen;
+import android.os.Bundle; // required for onCreate parameter
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +14,12 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "app";
     }
+
+    
+    @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  SplashScreen.show(MainActivity.this);
+}
+
 }
