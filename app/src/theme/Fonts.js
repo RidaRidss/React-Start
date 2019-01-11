@@ -19,6 +19,8 @@ const type = {
 // Metrics.generatedFontSize(ios, android)
 
 const size = {
+  twelve: Metrics.generatedFontSize(12),
+  fourteen: Metrics.generatedFontSize(14),
   eighteen: Metrics.generatedFontSize(18)
 };
 
